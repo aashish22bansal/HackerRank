@@ -69,8 +69,8 @@ public class Java_Sort
 		}
 
         // Sorting a list in java
-        List<Student> sortedList = studentList.stream().sorted().collect(Collectors.toList());
-        sortedList.forEach(System.out::println);
+		Collections.sort(studentList.getFname());
+		// Printing a sorted list
       	for(Student st: studentList){
 			System.out.println(st.getFname());
 		}

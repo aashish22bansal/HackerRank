@@ -23,6 +23,12 @@ class Student{
 	}
 }
 
+class SortById implements Comparator<Student>{
+	public int compare(Student S1, Student S2){
+		return S1.id - S2.id;
+	}
+}
+
 //Complete the code
 public class Java_Sort
 {
@@ -68,14 +74,21 @@ public class Java_Sort
             i++;
 		}
 
+		// Creating a custom comparator
+		// Comparator<Student> compareById = new Comparator<Student>(){
+		// 	@Override
+		// 	public int compare(Student S1, Student S2){
+		// 		return S1.getFname().compareTo(S2.getFname());
+		// 	}
+		// };
         // Sorting a list in java
-		Collections.sort(studentList.getFname());
+		Collections.sort(studentList, new SortById());
+		// Comparator<Student> compareById = (Student S1, Student S2)->S1.getId().compareTo(S2.getId());
+		// Comparator<Student> compareById = (Student S1, Student S2)->S1.getFname().compareTo(S2.getFname());
 		// Printing a sorted list
+		System.out.println("The names of the students in the sorted order are: ");
       	for(Student st: studentList){
 			System.out.println(st.getFname());
 		}
 	}
 }
-
-
-

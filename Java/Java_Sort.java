@@ -58,6 +58,12 @@ public class Java_Sort
 		}
 		return true;
 	}
+
+	public static String removeLeadingZeros(String str){
+		String regex = "^0+(?!$)";
+		str = str.replaceAll(regex,"");
+		return str;
+	}
 	public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
         System.out.println("Enter the number of students: ");
@@ -75,10 +81,16 @@ public class Java_Sort
 		while(testCases>0){
             System.out.println("Enter the Student ID for student "+(i+1)+": "); 
 			int id = in.nextInt();
+			String str = Integer.toString(id);
+			str = removeLeadingZeros(str);
+			id = Integer.parseInt(str);
             if((id<0)||(id>100000)){
                 while((id<0)||(id>100000)){
                     System.out.println("Enter the valid ID for student "+(i+1)+": "); 
                     id = in.nextInt();
+					str = Integer.toString(id);
+					str = removeLeadingZeros(str);
+					id = Integer.parseInt(str);
                 }
             }
 

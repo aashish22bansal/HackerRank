@@ -6,7 +6,7 @@ public class Java_1D_Array_Part_2 {
         // Return true if you can win the game; otherwise, return false.
         int flag=0;
         for(int i=0;i<game.length;){
-            if(((i+leap)>=(game.length-1))||(i==(game.length-1)))
+            if(((i+leap)>=(game.length))||(i==(game.length)))
             { // Checking if we can directly reach the end
                 flag=1;
                 break;
@@ -25,20 +25,26 @@ public class Java_1D_Array_Part_2 {
                     }
                     else if(game[i+1]==1)
                     { // if it is not possible to take a step forward
-                        if(game[i-1]==0)
-                        { // Take a step back
-                            if(i==0)
-                            { // Checking if we back on start
+                        if((i-1)<0){
+                            flag = 0;
+                            break;
+                        }
+                        else{
+                            if(game[i-1]==0)
+                            { // Take a step back
+                                if(i==1)
+                                { // Checking if we back on start
+                                    flag=0;
+                                    break;
+                                }
+                                else{
+                                    i--;
+                                }
+                            }
+                            else if(game[i-1]==1){
                                 flag=0;
                                 break;
                             }
-                            else{
-                                i--;
-                            }
-                        }
-                        else if(game[i-1]==1){
-                            flag=0;
-                            break;
                         }
                     }
                 }

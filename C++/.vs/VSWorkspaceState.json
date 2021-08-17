@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Hello World"
   ],
-  "SelectedNode": "\\Hello World",
+  "SelectedNode": "\\Hello World\\Hello_World.exe",
   "PreviewInSolutionExplorer": false
 }

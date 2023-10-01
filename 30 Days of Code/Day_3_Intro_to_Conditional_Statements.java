@@ -11,7 +11,8 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 public class Day_3_Intro_to_Conditional_Statements {
-    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    public static void main(String[] args) throws Exception{
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(bufferedReader.readLine().trim());
         if(N%2!=0){
             System.out.println("Weird");

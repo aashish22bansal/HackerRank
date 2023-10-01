@@ -37,7 +37,7 @@ public class Day_2_Operators {
 
         int tax_percent = Integer.parseInt(bufferedReader.readLine().trim());
 
-        Result.solve(meal_cost, tip_percent, tax_percent);
+        Day_2_Operators.solve(meal_cost, tip_percent, tax_percent);
 
         bufferedReader.close();
     }
